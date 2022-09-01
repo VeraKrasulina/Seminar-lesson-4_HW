@@ -4,15 +4,20 @@
 
 Console.Write ("Введите число: ");
 int num = int.Parse(Console.ReadLine()!);
-int num_st = num % 10;
-int sum = 0;
 
-while (num > 100)
+int NumbersSum (int number)
 {
-    num_st = num % 10;
-    num = num / 10;
+int num_st = number % 10;
+int sum = 0;
+while (number > 100)
+{
+    num_st = number % 10;
+    number = number / 10;
     sum = sum + num_st;
 }
-sum = sum + (num/10) + (num % 10);
+sum = sum + (number/10) + (number % 10);
+return (sum);
+}
 
-Console.WriteLine ($"Сумма всех чисел числа - {sum}.");
+int result = NumbersSum (num);
+Console.WriteLine ($"Сумма всех чисел числа - {result}.");
